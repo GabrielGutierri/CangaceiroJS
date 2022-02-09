@@ -1,0 +1,26 @@
+System.register(['./View.js'], function (_export, _context) {
+    "use strict";
+
+    var View;
+    return {
+        setters: [function (_ViewJs) {
+            View = _ViewJs.View;
+        }],
+        execute: function () {
+            let MensagemView = class MensagemView extends View {
+                constructor(elemento) {
+                    super(elemento);
+                }
+
+                template(model) {
+                    return model.texto ? `<p class="alert alert-info">${model.texto}</p>` //? é tipo o if
+                    : `<p></p>`; //: é tipo o else
+                }
+
+            };
+
+            _export('MensagemView', MensagemView);
+        }
+    };
+});
+//# sourceMappingURL=MensagemView.js.map
